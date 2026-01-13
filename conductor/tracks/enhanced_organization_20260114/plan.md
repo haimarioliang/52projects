@@ -22,7 +22,7 @@
 - [x] Task: Update Project Cards with dates and tags 1c4c24b
     - [ ] Write Tests: Verify date ranges and tag badges render correctly on cards
     - [ ] Implement: Update HTML generation in `renderProjects`
-- [ ] Task: Enhance Edit Modal with Tag Input and New Statuses
+- [x] Task: Enhance Edit Modal with Tag Input and New Statuses 36e23d4
     - [ ] Write Tests: Verify new status options are selectable and tags can be added
     - [ ] Implement: Update modal HTML and `saveProject` logic in `script.js`
 - [ ] Task: Conductor - User Manual Verification 'Phase 3: Frontend UI Enhancements' (Protocol in workflow.md)
