@@ -14,7 +14,7 @@
 - [ ] Task: Conductor - User Manual Verification 'Phase 2: Frontend Scaffolding and Dashboard' (Protocol in workflow.md)
 
 ## Phase 3: Project Details and Refinement
-- [ ] Task: Implement a modal or inline editor for project title and description
+- [x] Task: Implement a modal or inline editor for project title and description d85b6fb
 - [ ] Task: Integrate the editor with the `PATCH` API endpoint
 - [ ] Task: Final styling polish and responsiveness check
 - [ ] Task: Conductor - User Manual Verification 'Phase 3: Project Details and Refinement' (Protocol in workflow.md)
