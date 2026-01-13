@@ -1,10 +1,10 @@
 # Implementation Plan - UI Refinement & Stats Page
 
-## Phase 1: Core Logic & Status Updates
+## Phase 1: Core Logic & Status Updates [checkpoint: ebe8c74]
 - [x] Task: Update `date_utils.js` to implement Monday-to-Monday week calculation logic.
 - [x] Task: Update `db.js` (or schema migration) to support new status values (`Not Started`, `In Progress`, `Done`, `Failed`, `Skipped`) if not already flexible.
 - [x] Task: Backend - Verify/Update API to handle new status string values.
-- [ ] Task: Conductor - User Manual Verification 'Core Logic & Status Updates' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Core Logic & Status Updates' (Protocol in workflow.md)
 
 ## Phase 2: Dashboard UI Refinement
 - [ ] Task: Update `style.css` with CSS classes for all 5 distinct statuses (colors).
