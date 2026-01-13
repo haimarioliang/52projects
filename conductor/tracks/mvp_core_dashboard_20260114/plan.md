@@ -4,7 +4,7 @@
 - [x] Task: Initialize Node.js project and install dependencies (express, sqlite3, cors) c3dd8ef
 - [x] Task: Set up SQLite database schema (projects table with week, title, description, status) 25a7a50
 - [x] Task: Implement `GET /api/projects` endpoint to retrieve all weeks (initializing 52 records if empty) af8c067
-- [ ] Task: Implement `PATCH /api/projects/:week` endpoint to update project data
+- [x] Task: Implement `PATCH /api/projects/:week` endpoint to update project data 20be66d
 - [ ] Task: Conductor - User Manual Verification 'Phase 1: Foundation and Backend Setup' (Protocol in workflow.md)
 
 ## Phase 2: Frontend Scaffolding and Dashboard
