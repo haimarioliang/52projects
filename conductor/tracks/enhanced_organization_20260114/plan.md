@@ -10,7 +10,7 @@
 - [ ] Task: Conductor - User Manual Verification 'Phase 1: Database and Backend Updates' (Protocol in workflow.md)
 
 ## Phase 2: Core Logic and Utility Updates
-- [ ] Task: Implement week date calculation utility
+- [x] Task: Implement week date calculation utility 6db545e
     - [ ] Write Tests: Verify correct date ranges for various weeks and leap years
     - [ ] Implement: Create `public/utils.js` (or add to `script.js`) with date logic
 - [ ] Task: Conductor - User Manual Verification 'Phase 2: Core Logic and Utility Updates' (Protocol in workflow.md)
