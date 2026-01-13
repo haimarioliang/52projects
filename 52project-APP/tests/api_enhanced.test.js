@@ -34,7 +34,7 @@ test('API Enhanced Features', async (t) => {
   });
 
   await t.test('PATCH /api/projects/:week supports new statuses', async () => {
-    const statuses = ['Done (No Ship)', 'Failed'];
+    const statuses = ['Skipped', 'Failed'];
     
     for (const status of statuses) {
       const res = await request(app)

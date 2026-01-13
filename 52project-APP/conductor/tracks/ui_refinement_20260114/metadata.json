@@ -1,0 +1,8 @@
+{
+  "track_id": "ui_refinement_20260114",
+  "type": "feature",
+  "status": "new",
+  "created_at": "2026-01-14T12:00:00Z",
+  "updated_at": "2026-01-14T12:00:00Z",
+  "description": "UI refinement: click-to-cycle statuses, Monday-to-Monday week logic, and a new 52-dot grid Stats page."
+}

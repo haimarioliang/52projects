@@ -42,6 +42,13 @@ app.patch('/api/projects/:week', (req, res) => {
   const { week } = req.params;
   const { title, description, status, tags } = req.body;
 
+  if (status) {
+    const validStatuses = ['Not Started', 'In Progress', 'Done', 'Failed', 'Skipped'];
+    if (!validStatuses.includes(status)) {
+      return res.status(400).json({ error: 'Invalid status' });
+    }
+  }
+
   const sql = `
     UPDATE projects 
     SET title = COALESCE(?, title), 
