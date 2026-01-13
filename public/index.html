@@ -28,6 +28,20 @@
                 <input type="text" id="edit-title" placeholder="Project Title">
             </div>
             <div class="form-group">
+                <label for="edit-status">Status</label>
+                <select id="edit-status">
+                    <option value="Not Started">Not Started</option>
+                    <option value="In Progress">In Progress</option>
+                    <option value="Done">Done</option>
+                    <option value="Done (No Ship)">Done (No Ship)</option>
+                    <option value="Failed">Failed</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="edit-tags">Tags (comma separated)</label>
+                <input type="text" id="edit-tags" placeholder="e.g. frontend, backend, experimental">
+            </div>
+            <div class="form-group">
                 <label for="edit-description">Description</label>
                 <textarea id="edit-description" rows="5" placeholder="What is this project about?"></textarea>
             </div>

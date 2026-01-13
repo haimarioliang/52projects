@@ -45,6 +45,8 @@ test('UI Scaffolding', async (t) => {
     assert.ok(html.includes('id="modal"'), 'should have modal container');
     assert.ok(html.includes('id="edit-title"'), 'should have title input');
     assert.ok(html.includes('id="edit-description"'), 'should have description textarea');
+    assert.ok(html.includes('<select') && html.includes('id="edit-status"'), 'should have status dropdown');
+    assert.ok(html.includes('id="edit-tags"'), 'should have tags input');
   });
 
   await t.test('script.js has quarterly divider logic', () => {

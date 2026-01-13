@@ -57,7 +57,7 @@ function renderProjects(projects) {
 }
 
 async function toggleStatus(project) {
-    const statuses = ['Not Started', 'In Progress', 'Done'];
+    const statuses = ['Not Started', 'In Progress', 'Done', 'Done (No Ship)', 'Failed'];
     const currentIndex = statuses.indexOf(project.status);
     const nextStatus = statuses[(currentIndex + 1) % statuses.length];
 
@@ -69,21 +69,11 @@ async function toggleStatus(project) {
         });
         
         if (response.ok) {
-            const updatedProject = await response.json();
-            // Find and update the project in the local list or just refetch
             fetchProjects(); 
         }
     } catch (error) {
         console.error('Error toggling status:', error);
     }
-}
-
-function updateOverallProgress(projects) {
-    const doneCount = projects.filter(p => p.status === 'Done').length;
-    const progressPercent = (doneCount / 52) * 100;
-    
-    document.getElementById('progress-bar').style.width = `${progressPercent}%`;
-    document.getElementById('progress-text').innerText = `${doneCount}/52 completed`;
 }
 
 let currentProject = null;
@@ -92,11 +82,18 @@ function openProjectDetails(project) {
     currentProject = project;
     const modal = document.getElementById('modal');
     const titleInput = document.getElementById('edit-title');
+    const statusSelect = document.getElementById('edit-status');
+    const tagsInput = document.getElementById('edit-tags');
     const descInput = document.getElementById('edit-description');
     const weekTitle = document.getElementById('modal-week-title');
 
     weekTitle.innerText = `Week ${project.week}`;
     titleInput.value = project.title || '';
+    statusSelect.value = project.status;
+    
+    const tags = project.tags ? JSON.parse(project.tags) : [];
+    tagsInput.value = tags.join(', ');
+    
     descInput.value = project.description || '';
 
     modal.classList.remove('hidden');
@@ -106,13 +103,16 @@ async function saveProject() {
     if (!currentProject) return;
 
     const title = document.getElementById('edit-title').value;
+    const status = document.getElementById('edit-status').value;
+    const tagsRaw = document.getElementById('edit-tags').value;
+    const tags = JSON.stringify(tagsRaw.split(',').map(t => t.trim()).filter(t => t !== ''));
     const description = document.getElementById('edit-description').value;
 
     try {
         const response = await fetch(`/api/projects/${currentProject.week}`, {
             method: 'PATCH',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ title, description })
+            body: JSON.stringify({ title, status, tags, description })
         });
         
         if (response.ok) {
