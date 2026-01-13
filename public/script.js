@@ -30,9 +30,18 @@ function renderProjects(projects) {
 
         const card = document.createElement('div');
         card.className = 'project-card';
+        
+        const dateRange = getWeekRange(project.week, new Date().getFullYear());
+        const tags = project.tags ? JSON.parse(project.tags) : [];
+        const tagsHtml = tags.map(tag => `<span class="tag-badge">${tag}</span>`).join('');
+
         card.innerHTML = `
-            <div class="week-num">Week ${project.week}</div>
+            <div class="card-header">
+                <div class="week-num">Week ${project.week}</div>
+                <div class="date-range">${dateRange}</div>
+            </div>
             <h3>${project.title || `Project ${project.week}`}</h3>
+            <div class="tags-container">${tagsHtml}</div>
             <div class="status-badge status-${project.status.toLowerCase().replace(/ /g, '-')}">${project.status}</div>
         `;
         

@@ -51,4 +51,10 @@ test('UI Scaffolding', async (t) => {
     const js = fs.readFileSync(path.join(publicDir, 'script.js'), 'utf8');
     assert.ok(js.includes('1, 14, 27, 40') || js.includes('quarter'), 'should have logic for quarterly dividers');
   });
+
+  await t.test('script.js has date range and tag rendering logic', () => {
+    const js = fs.readFileSync(path.join(publicDir, 'script.js'), 'utf8');
+    assert.ok(js.includes('getWeekRange'), 'should call getWeekRange');
+    assert.ok(js.includes('tags-container') || js.includes('tag-badge'), 'should have logic for tags');
+  });
 });
