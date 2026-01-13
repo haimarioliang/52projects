@@ -46,4 +46,9 @@ test('UI Scaffolding', async (t) => {
     assert.ok(html.includes('id="edit-title"'), 'should have title input');
     assert.ok(html.includes('id="edit-description"'), 'should have description textarea');
   });
+
+  await t.test('script.js has quarterly divider logic', () => {
+    const js = fs.readFileSync(path.join(publicDir, 'script.js'), 'utf8');
+    assert.ok(js.includes('1, 14, 27, 40') || js.includes('quarter'), 'should have logic for quarterly dividers');
+  });
 });

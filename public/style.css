@@ -106,6 +106,18 @@ h1 {
 .status-in-progress { background-color: var(--status-in-progress); color: black; }
 .status-done { background-color: var(--status-done); color: white; }
 
+/* Quarterly Dividers */
+.quarter-divider {
+    grid-column: 1 / -1;
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: var(--accent-color);
+    border-bottom: 1px solid var(--border-color);
+    padding: 20px 0 10px 0;
+    margin-top: 20px;
+    letter-spacing: 1px;
+}
+
 /* Modal */
 .modal {
     position: fixed;

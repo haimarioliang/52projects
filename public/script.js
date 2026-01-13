@@ -13,7 +13,21 @@ function renderProjects(projects) {
     const list = document.getElementById('project-list');
     list.innerHTML = '';
     
+    const quarters = {
+        1: 'Quarter 1 (Jan - Mar)',
+        14: 'Quarter 2 (Apr - Jun)',
+        27: 'Quarter 3 (Jul - Sep)',
+        40: 'Quarter 4 (Oct - Dec)'
+    };
+
     projects.forEach(project => {
+        if (quarters[project.week]) {
+            const divider = document.createElement('div');
+            divider.className = 'quarter-divider';
+            divider.innerText = quarters[project.week];
+            list.appendChild(divider);
+        }
+
         const card = document.createElement('div');
         card.className = 'project-card';
         card.innerHTML = `
