@@ -27,4 +27,26 @@ test('API Endpoints', async (t) => {
     assert.strictEqual(res.body[0].week, 1);
     assert.strictEqual(res.body[51].week, 52);
   });
+
+  await t.test('PATCH /api/projects/:week updates project data', async () => {
+    const updateData = {
+      title: 'New Title',
+      description: 'New Description',
+      status: 'In Progress'
+    };
+    const res = await request(app)
+      .patch('/api/projects/1')
+      .send(updateData);
+    
+    assert.strictEqual(res.status, 200);
+    assert.strictEqual(res.body.week, 1);
+    assert.strictEqual(res.body.title, 'New Title');
+    assert.strictEqual(res.body.description, 'New Description');
+    assert.strictEqual(res.body.status, 'In Progress');
+
+    // Verify in DB
+    const getRes = await request(app).get('/api/projects');
+    const project1 = getRes.body.find(p => p.week === 1);
+    assert.strictEqual(project1.title, 'New Title');
+  });
 });
