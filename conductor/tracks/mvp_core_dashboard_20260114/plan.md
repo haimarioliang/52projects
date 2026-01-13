@@ -7,7 +7,7 @@
 - [x] Task: Implement `PATCH /api/projects/:week` endpoint to update project data 20be66d
 - [ ] Task: Conductor - User Manual Verification 'Phase 1: Foundation and Backend Setup' (Protocol in workflow.md)
 
-## Phase 2: Frontend Scaffolding and Dashboard
+## Phase 2: Frontend Scaffolding and Dashboard [checkpoint: f82e5fd]
 - [x] Task: Create basic HTML structure and CSS for dark mode minimalist theme 6b9435b
 - [x] Task: Implement JavaScript to fetch and display the list of 52 weeks from the API 928be88
 - [x] Task: Implement status toggle functionality on the dashboard with immediate UI feedback c1a5712
