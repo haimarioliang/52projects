@@ -4,7 +4,7 @@
 - [x] Task: Update database schema to include 'tags' column c13d0a1
     - [ ] Write Tests: Verify `projects` table can store and retrieve tags
     - [ ] Implement: Update `db.js` schema and migration logic
-- [ ] Task: Update API to support new statuses and tags
+- [x] Task: Update API to support new statuses and tags 95c0efd
     - [ ] Write Tests: Verify `PATCH` and `GET` handle `Done (No Ship)`, `Failed`, and tags
     - [ ] Implement: Update `app.js` validation and logic
 - [ ] Task: Conductor - User Manual Verification 'Phase 1: Database and Backend Updates' (Protocol in workflow.md)
