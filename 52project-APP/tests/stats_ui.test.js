@@ -14,7 +14,8 @@ test('Stats Page UI', async (t) => {
   await t.test('stats.html has required structure', () => {
     const html = fs.readFileSync(statsHtmlPath, 'utf8');
     assert.ok(html.includes('id="stats-grid"'), 'should have stats-grid container');
-    assert.ok(html.includes('id="progress-bar"'), 'should have progress-bar');
+    assert.ok(!html.includes('id="progress-bar"'), 'should NOT have progress-bar');
+    assert.ok(html.includes('id="progress-text"'), 'should have progress-text');
     assert.ok(html.includes('nav-links'), 'should have navigation links');
   });
 

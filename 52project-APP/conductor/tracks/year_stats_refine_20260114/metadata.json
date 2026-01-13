@@ -1,0 +1,8 @@
+{
+  "track_id": "year_stats_refine_20260114",
+  "type": "feature",
+  "status": "new",
+  "created_at": "2026-01-14T12:00:00Z",
+  "updated_at": "2026-01-14T12:00:00Z",
+  "description": "Refine the Year Stats page: organize dots into quarterly rows and remove the horizontal progress bar."
+}

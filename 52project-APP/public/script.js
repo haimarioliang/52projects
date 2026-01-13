@@ -155,7 +155,15 @@ function renderStats(projects) {
     if (!grid) return;
     grid.innerHTML = '';
     
-    projects.forEach(project => {
+    projects.forEach((project, index) => {
+        // Inject Q label at start of each row (every 13 items)
+        if (index % 13 === 0) {
+            const label = document.createElement('div');
+            label.className = 'quarter-label';
+            label.innerText = `Q${Math.floor(index / 13) + 1}`;
+            grid.appendChild(label);
+        }
+
         const dot = document.createElement('div');
         dot.className = `dot status-${project.status.toLowerCase().replace(/ /g, '-')}`;
         dot.title = `Week ${project.week}: ${project.status}${project.title ? ` - ${project.title}` : ''}`;

@@ -228,17 +228,37 @@ h1 {
 /* Stats Page */
 .stats-container {
     width: 100%;
-    max-width: 600px;
+    max-width: 650px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
+.stats-title-row {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: -20px; /* Adjust spacing to grid */
+}
+
+#progress-text {
+    font-size: 0.9rem;
+    color: var(--status-not-started);
+}
+
 .stats-grid {
     display: grid;
-    grid-template-columns: repeat(13, 1fr);
+    grid-template-columns: auto repeat(13, 1fr);
     gap: 15px;
     margin: 40px 0;
+    align-items: center;
+}
+
+.quarter-label {
+    font-weight: bold;
+    color: var(--accent-color);
+    margin-right: 15px;
 }
 
 .dot {
@@ -273,9 +293,30 @@ h1 {
         grid-template-columns: 1fr;
     }
     
+    .stats-container {
+        width: 100%;
+        overflow-x: auto;
+        padding-bottom: 20px; /* Space for scrollbar */
+    }
+
     .stats-grid {
-        grid-template-columns: repeat(7, 1fr);
+        grid-template-columns: auto repeat(13, 1fr);
         gap: 10px;
+        min-width: 500px;
+        margin: 20px 0;
+        padding: 0 10px;
+        align-items: center;
+    }
+
+    .quarter-label {
+        font-weight: bold;
+        color: var(--accent-color);
+        margin-right: 10px;
+    }
+
+    .dot {
+        width: 20px;
+        height: 20px;
     }
 
     body {
