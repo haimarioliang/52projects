@@ -6,6 +6,7 @@ const app = express();
 
 app.use(cors());
 app.use(express.json());
+app.use(express.static('public'));
 
 app.get('/api/projects', (req, res) => {
   db.all('SELECT * FROM projects ORDER BY week ASC', (err, rows) => {
