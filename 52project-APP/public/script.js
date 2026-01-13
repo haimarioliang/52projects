@@ -139,22 +139,56 @@ async function saveProject() {
     }
 }
 
+async function fetchStats() {
+    try {
+        const response = await fetch('/api/projects');
+        const projects = await response.json();
+        renderStats(projects);
+        updateOverallProgress(projects);
+    } catch (error) {
+        console.error('Error fetching stats:', error);
+    }
+}
+
+function renderStats(projects) {
+    const grid = document.getElementById('stats-grid');
+    if (!grid) return;
+    grid.innerHTML = '';
+    
+    projects.forEach(project => {
+        const dot = document.createElement('div');
+        dot.className = `dot status-${project.status.toLowerCase().replace(/ /g, '-')}`;
+        dot.title = `Week ${project.week}: ${project.status}${project.title ? ` - ${project.title}` : ''}`;
+        grid.appendChild(dot);
+    });
+}
+
 function closeModal() {
-    document.getElementById('modal').classList.add('hidden');
+    const modal = document.getElementById('modal');
+    if (modal) modal.classList.add('hidden');
     currentProject = null;
 }
 
 // Initial fetch
 document.addEventListener('DOMContentLoaded', () => {
-    fetchProjects();
-
-    document.querySelector('.close-btn').onclick = closeModal;
-    document.getElementById('save-project').onclick = saveProject;
+    const isStatsPage = !!document.getElementById('stats-grid');
     
-    window.onclick = (event) => {
-        const modal = document.getElementById('modal');
-        if (event.target === modal) {
-            closeModal();
-        }
-    };
+    if (isStatsPage) {
+        fetchStats();
+    } else {
+        fetchProjects();
+
+        const closeBtn = document.querySelector('.close-btn');
+        if (closeBtn) closeBtn.onclick = closeModal;
+        
+        const saveBtn = document.getElementById('save-project');
+        if (saveBtn) saveBtn.onclick = saveProject;
+        
+        window.onclick = (event) => {
+            const modal = document.getElementById('modal');
+            if (event.target === modal) {
+                closeModal();
+            }
+        };
+    }
 });

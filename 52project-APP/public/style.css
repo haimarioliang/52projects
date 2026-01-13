@@ -273,6 +273,11 @@ h1 {
         grid-template-columns: 1fr;
     }
     
+    .stats-grid {
+        grid-template-columns: repeat(7, 1fr);
+        gap: 10px;
+    }
+
     body {
         padding: 10px;
     }

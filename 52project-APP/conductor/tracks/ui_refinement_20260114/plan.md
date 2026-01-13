@@ -13,8 +13,8 @@
 - [x] Task: Conductor - User Manual Verification 'Dashboard UI Refinement' (Protocol in workflow.md)
 
 ## Phase 3: Stats Page Implementation
-- [ ] Task: Create `public/stats.html` structure.
-- [ ] Task: Add navigation links to `index.html` and `stats.html` to switch views.
-- [ ] Task: Implement `renderStats()` function in `script.js` (or new `stats.js`) to fetch data and draw the 52-dot grid.
-- [ ] Task: Style the 52-dot grid in `style.css` (responsive layout, status colors).
+- [x] Task: Create `public/stats.html` structure.
+- [x] Task: Add navigation links to `index.html` and `stats.html` to switch views.
+- [x] Task: Implement `renderStats()` function in `script.js` (or new `stats.js`) to fetch data and draw the 52-dot grid.
+- [x] Task: Style the 52-dot grid in `style.css` (responsive layout, status colors).
 - [ ] Task: Conductor - User Manual Verification 'Stats Page Implementation' (Protocol in workflow.md)
