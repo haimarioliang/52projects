@@ -7,9 +7,9 @@
 - [x] Task: Conductor - User Manual Verification 'Core Logic & Status Updates' (Protocol in workflow.md)
 
 ## Phase 2: Dashboard UI Refinement
-- [ ] Task: Update `style.css` with CSS classes for all 5 distinct statuses (colors).
-- [ ] Task: Refactor `script.js` status toggle function to cycle through the 5 statuses instead of a binary toggle.
-- [ ] Task: Update Dashboard UI rendering to display the new Monday-to-Monday date ranges.
+- [x] Task: Update `style.css` with CSS classes for all 5 distinct statuses (colors).
+- [x] Task: Refactor `script.js` status toggle function to cycle through the 5 statuses instead of a binary toggle.
+- [x] Task: Update Dashboard UI rendering to display the new Monday-to-Monday date ranges.
 - [ ] Task: Conductor - User Manual Verification 'Dashboard UI Refinement' (Protocol in workflow.md)
 
 ## Phase 3: Stats Page Implementation

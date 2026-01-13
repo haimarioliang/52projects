@@ -57,7 +57,7 @@ function renderProjects(projects) {
 }
 
 async function toggleStatus(project) {
-    const statuses = ['Not Started', 'In Progress', 'Done', 'Done (No Ship)', 'Failed'];
+    const statuses = ['Not Started', 'In Progress', 'Done', 'Failed', 'Skipped'];
     const currentIndex = statuses.indexOf(project.status);
     const nextStatus = statuses[(currentIndex + 1) % statuses.length];
 
@@ -73,6 +73,21 @@ async function toggleStatus(project) {
         }
     } catch (error) {
         console.error('Error toggling status:', error);
+    }
+}
+
+function updateOverallProgress(projects) {
+    const completedCount = projects.filter(p => 
+        ['Done', 'Failed', 'Skipped'].includes(p.status)
+    ).length;
+    
+    const progressBar = document.getElementById('progress-bar');
+    const progressText = document.getElementById('progress-text');
+    
+    if (progressBar && progressText) {
+        const percentage = (completedCount / 52) * 100;
+        progressBar.style.width = `${percentage}%`;
+        progressText.innerText = `${completedCount}/52 completed`;
     }
 }
 
