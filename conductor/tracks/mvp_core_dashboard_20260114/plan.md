@@ -1,6 +1,6 @@
 # Track Plan: MVP: Core Dashboard and Tracking
 
-## Phase 1: Foundation and Backend Setup
+## Phase 1: Foundation and Backend Setup [checkpoint: 77afbd3]
 - [x] Task: Initialize Node.js project and install dependencies (express, sqlite3, cors) c3dd8ef
 - [x] Task: Set up SQLite database schema (projects table with week, title, description, status) 25a7a50
 - [x] Task: Implement `GET /api/projects` endpoint to retrieve all weeks (initializing 52 records if empty) af8c067
