@@ -5,19 +5,39 @@ const DB_PATH = path.join(__dirname, 'database.sqlite');
 
 const db = new sqlite3.Database(DB_PATH);
 
-function initDb() {
+function initDb(database = db) {
   return new Promise((resolve, reject) => {
-    db.serialize(() => {
-      db.run(`
+    database.serialize(() => {
+      database.run(`
         CREATE TABLE IF NOT EXISTS projects (
           week INTEGER PRIMARY KEY,
           title TEXT,
           description TEXT,
-          status TEXT DEFAULT 'Not Started'
+          status TEXT DEFAULT 'Not Started',
+          tags TEXT
         )
       `, (err) => {
-        if (err) reject(err);
-        else resolve();
+        if (err) {
+            reject(err);
+            return;
+        }
+
+        // Migration: Check if tags column exists, if not add it
+        database.all("PRAGMA table_info(projects)", (err, rows) => {
+            if (err) {
+                reject(err);
+                return;
+            }
+            const columns = rows.map(r => r.name);
+            if (!columns.includes('tags')) {
+                database.run("ALTER TABLE projects ADD COLUMN tags TEXT", (err) => {
+                    if (err) reject(err);
+                    else resolve();
+                });
+            } else {
+                resolve();
+            }
+        });
       });
     });
   });
