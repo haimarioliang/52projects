@@ -40,17 +40,18 @@ app.get('/api/projects', (req, res) => {
 
 app.patch('/api/projects/:week', (req, res) => {
   const { week } = req.params;
-  const { title, description, status } = req.body;
+  const { title, description, status, tags } = req.body;
 
   const sql = `
     UPDATE projects 
     SET title = COALESCE(?, title), 
         description = COALESCE(?, description), 
-        status = COALESCE(?, status)
+        status = COALESCE(?, status),
+        tags = COALESCE(?, tags)
     WHERE week = ?
   `;
 
-  db.run(sql, [title, description, status, week], function(err) {
+  db.run(sql, [title, description, status, tags, week], function(err) {
     if (err) {
       return res.status(500).json({ error: err.message });
     }
