@@ -63,11 +63,60 @@ function updateOverallProgress(projects) {
     document.getElementById('progress-text').innerText = `${doneCount}/52 completed`;
 }
 
+let currentProject = null;
+
 function openProjectDetails(project) {
-    // Placeholder for next phase
-    console.log('Opening details for:', project);
-    alert(`Project: ${project.title}\nStatus: ${project.status}`);
+    currentProject = project;
+    const modal = document.getElementById('modal');
+    const titleInput = document.getElementById('edit-title');
+    const descInput = document.getElementById('edit-description');
+    const weekTitle = document.getElementById('modal-week-title');
+
+    weekTitle.innerText = `Week ${project.week}`;
+    titleInput.value = project.title || '';
+    descInput.value = project.description || '';
+
+    modal.classList.remove('hidden');
+}
+
+async function saveProject() {
+    if (!currentProject) return;
+
+    const title = document.getElementById('edit-title').value;
+    const description = document.getElementById('edit-description').value;
+
+    try {
+        const response = await fetch(`/api/projects/${currentProject.week}`, {
+            method: 'PATCH',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ title, description })
+        });
+        
+        if (response.ok) {
+            closeModal();
+            fetchProjects(); 
+        }
+    } catch (error) {
+        console.error('Error saving project:', error);
+    }
+}
+
+function closeModal() {
+    document.getElementById('modal').classList.add('hidden');
+    currentProject = null;
 }
 
 // Initial fetch
-document.addEventListener('DOMContentLoaded', fetchProjects);
+document.addEventListener('DOMContentLoaded', () => {
+    fetchProjects();
+
+    document.querySelector('.close-btn').onclick = closeModal;
+    document.getElementById('save-project').onclick = saveProject;
+    
+    window.onclick = (event) => {
+        const modal = document.getElementById('modal');
+        if (event.target === modal) {
+            closeModal();
+        }
+    };
+});

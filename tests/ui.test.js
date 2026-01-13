@@ -34,4 +34,16 @@ test('UI Scaffolding', async (t) => {
     const js = fs.readFileSync(path.join(publicDir, 'script.js'), 'utf8');
     assert.ok(js.includes('function toggleStatus') || js.includes('const toggleStatus'), 'should have toggleStatus function');
   });
+
+  await t.test('script.js has openProjectDetails function', () => {
+    const js = fs.readFileSync(path.join(publicDir, 'script.js'), 'utf8');
+    assert.ok(js.includes('function openProjectDetails') || js.includes('const openProjectDetails'), 'should have openProjectDetails function');
+  });
+
+  await t.test('index.html has modal structure', () => {
+    const html = fs.readFileSync(path.join(publicDir, 'index.html'), 'utf8');
+    assert.ok(html.includes('id="modal"'), 'should have modal container');
+    assert.ok(html.includes('id="edit-title"'), 'should have title input');
+    assert.ok(html.includes('id="edit-description"'), 'should have description textarea');
+  });
 });
