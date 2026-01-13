@@ -1,6 +1,6 @@
 # Track Plan: Enhanced Organization and Tracking
 
-## Phase 1: Database and Backend Updates
+## Phase 1: Database and Backend Updates [checkpoint: 35ba07b]
 - [x] Task: Update database schema to include 'tags' column c13d0a1
     - [ ] Write Tests: Verify `projects` table can store and retrieve tags
     - [ ] Implement: Update `db.js` schema and migration logic
