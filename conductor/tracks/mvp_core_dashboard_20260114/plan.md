@@ -13,7 +13,7 @@
 - [x] Task: Implement status toggle functionality on the dashboard with immediate UI feedback c1a5712
 - [ ] Task: Conductor - User Manual Verification 'Phase 2: Frontend Scaffolding and Dashboard' (Protocol in workflow.md)
 
-## Phase 3: Project Details and Refinement
+## Phase 3: Project Details and Refinement [checkpoint: a94a483]
 - [x] Task: Implement a modal or inline editor for project title and description d85b6fb
 - [ ] Task: Integrate the editor with the `PATCH` API endpoint
 - [x] Task: Final styling polish and responsiveness check 098cd8a
