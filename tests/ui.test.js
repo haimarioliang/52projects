@@ -24,4 +24,9 @@ test('UI Scaffolding', async (t) => {
     assert.ok(html.includes('<title>'), 'should have title');
     assert.ok(html.includes('href="style.css"'), 'should link to style.css');
   });
+
+  await t.test('script.js has fetchProjects function', () => {
+    const js = fs.readFileSync(path.join(publicDir, 'script.js'), 'utf8');
+    assert.ok(js.includes('function fetchProjects') || js.includes('const fetchProjects'), 'should have fetchProjects function');
+  });
 });
