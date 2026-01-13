@@ -19,7 +19,7 @@
 - [x] Task: Implement Quarterly Dividers in Dashboard 62bc304
     - [ ] Write Tests: Verify dividers appear at weeks 1, 14, 27, and 40
     - [ ] Implement: Update `renderProjects` in `script.js` and add styles to `style.css`
-- [ ] Task: Update Project Cards with dates and tags
+- [x] Task: Update Project Cards with dates and tags 1c4c24b
     - [ ] Write Tests: Verify date ranges and tag badges render correctly on cards
     - [ ] Implement: Update HTML generation in `renderProjects`
 - [ ] Task: Enhance Edit Modal with Tag Input and New Statuses
