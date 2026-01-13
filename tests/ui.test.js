@@ -29,4 +29,9 @@ test('UI Scaffolding', async (t) => {
     const js = fs.readFileSync(path.join(publicDir, 'script.js'), 'utf8');
     assert.ok(js.includes('function fetchProjects') || js.includes('const fetchProjects'), 'should have fetchProjects function');
   });
+
+  await t.test('script.js has toggleStatus function', () => {
+    const js = fs.readFileSync(path.join(publicDir, 'script.js'), 'utf8');
+    assert.ok(js.includes('function toggleStatus') || js.includes('const toggleStatus'), 'should have toggleStatus function');
+  });
 });
