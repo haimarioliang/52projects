@@ -2,7 +2,7 @@
 
 ## Frontend
 - **Vanilla HTML5:** For structure.
-- **Vanilla CSS3:** For styling, focusing on a dark mode minimalist aesthetic.
+- **Vanilla CSS3:** For styling, focusing on a dark mode minimalist aesthetic with custom color-coded project statuses and a grid-based stats visualization.
 - **Vanilla JavaScript (ES6+):** For client-side logic and interaction.
 
 ## Backend
