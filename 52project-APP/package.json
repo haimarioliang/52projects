@@ -2,11 +2,12 @@
   "name": "52project",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "directories": {
     "test": "tests"
   },
   "scripts": {
+    "start": "node server.js",
     "test": "node --test --test-concurrency=1 tests/*.test.js"
   },
   "keywords": [],
