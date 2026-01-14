@@ -365,6 +365,12 @@ h1 {
 }
 
 /* Responsiveness */
+@media (max-width: 1024px) {
+    .quarter-content {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
 @media (max-width: 768px) {
     .grid {
         grid-template-columns: 1fr;
