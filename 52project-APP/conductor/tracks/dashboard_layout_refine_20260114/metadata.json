@@ -1,0 +1,8 @@
+{
+  "track_id": "dashboard_layout_refine_20260114",
+  "type": "feature",
+  "status": "new",
+  "created_at": "2026-01-14T12:00:00Z",
+  "updated_at": "2026-01-14T12:00:00Z",
+  "description": "Dashboard layout refinement (4-column grid in drawers) and header restoration (side-by-side layout)."
+}
