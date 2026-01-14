@@ -1,7 +1,7 @@
 :root {
-    --bg-color: #121212;
+    --bg-color: #000000;
     --text-color: #e0e0e0;
-    --card-bg: #1e1e1e;
+    --card-bg: #121212;
     --accent-color: #bb86fc;
     --border-color: #333;
     --status-not-started: #757575;
@@ -12,15 +12,25 @@
     --modal-overlay: rgba(0, 0, 0, 0.8);
 }
 
+* {
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+    line-height: 1.5;
+    letter-spacing: 0.5px;
+}
+
 body {
     background-color: var(--bg-color);
     color: var(--text-color);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+input, textarea, button, select {
+    font-family: inherit;
 }
 
 header {
@@ -36,7 +46,14 @@ h1 {
     font-weight: 300;
     letter-spacing: 2px;
     margin: 0;
-    font-size: 1.8rem;
+    font-size: 2rem;
+}
+
+h2 {
+    font-weight: 300;
+    letter-spacing: 1px;
+    margin-top: 0;
+    margin-bottom: 20px;
 }
 
 .nav-links {
@@ -58,10 +75,10 @@ h1 {
 
 #global-notes-area {
     width: 100%;
-    padding: 15px;
+    padding: 20px;
     background-color: var(--bg-color);
     border: 1px solid var(--border-color);
-    border-radius: 4px;
+    border-radius: 0;
     color: var(--text-color);
     box-sizing: border-box;
     font-family: inherit;
@@ -75,14 +92,14 @@ h1 {
     color: var(--status-not-started);
     margin-top: 10px;
     text-align: right;
-    height: 1.2em;
+    height: 20px;
 }
 
 #progress-container {
     width: 100%;
     height: 10px;
     background-color: var(--border-color);
-    border-radius: 5px;
+    border-radius: 0;
     overflow: hidden;
     position: relative;
     margin-bottom: 10px;
@@ -120,7 +137,7 @@ h1 {
 .project-card {
     background-color: var(--card-bg);
     border: 1px solid var(--border-color);
-    border-radius: 8px;
+    border-radius: 0;
     padding: 20px;
     transition: transform 0.2s, border-color 0.2s;
     cursor: pointer;
@@ -160,8 +177,8 @@ h1 {
 .tags-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 5px;
-    margin-bottom: 15px;
+    gap: 10px;
+    margin-bottom: 20px;
     min-height: 20px;
 }
 
@@ -169,15 +186,15 @@ h1 {
     background-color: var(--border-color);
     color: var(--text-color);
     font-size: 0.6rem;
-    padding: 2px 6px;
-    border-radius: 10px;
+    padding: 2px 10px;
+    border-radius: 0;
     border: 1px solid var(--border-color);
 }
 
 .status-badge {
     display: inline-block;
-    padding: 4px 8px;
-    border-radius: 4px;
+    padding: 10px 10px;
+    border-radius: 0;
     font-size: 0.75rem;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -248,17 +265,16 @@ h1 {
 .modal-content {
     background-color: var(--card-bg);
     padding: 30px;
-    border-radius: 12px;
+    border-radius: 0;
     width: 90%;
     max-width: 500px;
     position: relative;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
     box-sizing: border-box;
 }
 
 .close-btn {
     position: absolute;
-    top: 15px;
+    top: 20px;
     right: 20px;
     font-size: 1.5rem;
     cursor: pointer;
@@ -271,17 +287,17 @@ h1 {
 
 .form-group label {
     display: block;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
     font-size: 0.9rem;
     color: var(--accent-color);
 }
 
 .form-group input, .form-group textarea, .form-group select {
     width: 100%;
-    padding: 12px;
+    padding: 10px;
     background-color: var(--bg-color);
     border: 1px solid var(--border-color);
-    border-radius: 4px;
+    border-radius: 0;
     color: var(--text-color);
     box-sizing: border-box;
 }
@@ -290,8 +306,8 @@ h1 {
     background-color: var(--accent-color);
     color: black;
     border: none;
-    padding: 12px 20px;
-    border-radius: 4px;
+    padding: 10px 20px;
+    border-radius: 0;
     cursor: pointer;
     font-weight: bold;
     width: 100%;
@@ -327,7 +343,7 @@ h1 {
 .stats-grid {
     display: grid;
     grid-template-columns: auto repeat(13, 1fr);
-    gap: 15px;
+    gap: 10px;
     margin: 40px 0;
     align-items: center;
 }
@@ -335,7 +351,7 @@ h1 {
 .quarter-label {
     font-weight: bold;
     color: var(--accent-color);
-    margin-right: 15px;
+    margin-right: 20px;
 }
 
 .dot {
@@ -372,6 +388,12 @@ h1 {
 }
 
 @media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 20px;
+        margin-bottom: 30px;
+    }
+
     .grid {
         grid-template-columns: 1fr;
     }
