@@ -200,6 +200,10 @@ h1 {
 }
 
 .quarter-content {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    width: 100%;
     transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
     overflow: hidden;
     max-height: 5000px; /* Large enough to fit cards */
@@ -354,6 +358,10 @@ h1 {
 @media (max-width: 768px) {
     .grid {
         grid-template-columns: 1fr;
+    }
+
+    .quarter-content {
+        grid-template-columns: repeat(2, 1fr);
     }
     
     .stats-container {
