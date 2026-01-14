@@ -36,6 +36,7 @@ h1 {
     font-weight: 300;
     letter-spacing: 2px;
     margin: 0;
+    font-size: 1.8rem;
 }
 
 .nav-links {
@@ -97,6 +98,15 @@ h1 {
 #progress-text {
     font-size: 0.8rem;
     color: var(--status-not-started);
+}
+
+#dashboard {
+    width: 100%;
+    max-width: 1200px;
+}
+
+#project-list {
+    width: 100%;
 }
 
 .grid {

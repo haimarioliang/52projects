@@ -34,7 +34,7 @@ function renderProjects(projects) {
             list.appendChild(quarterHeader);
 
             currentQuarterContent = document.createElement('div');
-            currentQuarterContent.className = 'quarter-content collapsed grid';
+            currentQuarterContent.className = 'quarter-content collapsed';
             currentQuarterContent.id = `quarter-${quarterIndex}`;
             list.appendChild(currentQuarterContent);
 
