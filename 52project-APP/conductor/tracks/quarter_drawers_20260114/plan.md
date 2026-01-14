@@ -7,7 +7,7 @@
 - [x] Task: Conductor - User Manual Verification 'Logic & Structure' (Protocol in workflow.md)
 
 ## Phase 2: UI Polishing & Initial State
-- [ ] Task: Update `public/style.css` to add smooth transitions for the quarterly drawers (e.g., `max-height` or `transform` transitions).
-- [ ] Task: Style the quarter headers to clearly indicate interactivity (hover effects, cursor change).
-- [ ] Task: Implement logic in `script.js` to automatically expand only the quarter containing the current date upon page load.
+- [x] Task: Update `public/style.css` to add smooth transitions for the quarterly drawers (e.g., `max-height` or `transform` transitions).
+- [x] Task: Style the quarter headers to clearly indicate interactivity (hover effects, cursor change).
+- [~] Task: Implement logic in `script.js` to automatically expand only the quarter containing the current date upon page load.
 - [ ] Task: Conductor - User Manual Verification 'UI Polishing & Initial State' (Protocol in workflow.md)
