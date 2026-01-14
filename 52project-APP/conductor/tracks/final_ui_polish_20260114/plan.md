@@ -10,7 +10,7 @@
 - [ ] Task: Refine the dashboard 5-column grid and project card layout to ensure pixel-perfect alignment.
 - [ ] Task: Conductor - User Manual Verification 'Spacing & Grid Standardization' (Protocol in workflow.md)
 
-## Phase 3: Cross-Page Polish
+## Phase 3: Cross-Page Polish [checkpoint: 438ab59]
 - [x] Task: Audit `index.html` and `stats.html` headers to ensure identical structure and styling.
 - [x] Task: Refine the "Dumb Ideas" modal styling to match the new strict spacing and typography rules.
 - [x] Task: Verify mobile responsiveness for all pages under the new standardized spacing.
