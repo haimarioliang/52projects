@@ -8,6 +8,26 @@ app.use(cors());
 app.use(express.json());
 app.use(express.static('public'));
 
+app.get('/api/global-notes', (req, res) => {
+  db.get('SELECT content FROM global_notes WHERE id = 1', (err, row) => {
+    if (err) {
+      return res.status(500).json({ error: err.message });
+    }
+    res.json(row || { content: '' });
+  });
+});
+
+app.patch('/api/global-notes', (req, res) => {
+  const { content } = req.body;
+  
+  db.run('UPDATE global_notes SET content = ? WHERE id = 1', [content], function(err) {
+    if (err) {
+      return res.status(500).json({ error: err.message });
+    }
+    res.json({ content });
+  });
+});
+
 app.get('/api/projects', (req, res) => {
   db.all('SELECT * FROM projects ORDER BY week ASC', (err, rows) => {
     if (err) {

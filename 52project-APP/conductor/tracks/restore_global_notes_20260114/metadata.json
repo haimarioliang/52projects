@@ -1,0 +1,8 @@
+{
+  "track_id": "restore_global_notes_20260114",
+  "type": "feature",
+  "status": "new",
+  "created_at": "2026-01-14T12:00:00Z",
+  "updated_at": "2026-01-14T12:00:00Z",
+  "description": "Restore the Global Notes (Dumb Ideas) feature and implement a minimalist hamburger menu navigation."
+}
