@@ -43,5 +43,5 @@ simple 52 projects tracking app
 
 ## Non-Functional Requirements
 - **Performance:** The app should load instantly and handle 52 records with no perceptible lag.
-- **Usability:** The interface must be intuitive and distraction-free, adhering to the dark mode minimalist design.
+- **Usability:** The interface must be intuitive and distraction-free, adhering to a strict "Minimalist Terminal" aesthetic with consistent monospace typography and standardized spacing.
 - **Reliability:** Data must be saved reliably to the database to prevent loss of progress.
