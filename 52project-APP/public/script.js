@@ -11,6 +11,7 @@ async function fetchProjects() {
 
 function renderProjects(projects) {
     const list = document.getElementById('project-list');
+    if (!list) return;
     list.innerHTML = '';
     
     const quarters = {
@@ -20,12 +21,25 @@ function renderProjects(projects) {
         40: 'Quarter 4 (Oct - Dec)'
     };
 
+    let currentQuarterContent = null;
+    let quarterIndex = 0;
+
     projects.forEach(project => {
         if (quarters[project.week]) {
-            const divider = document.createElement('div');
-            divider.className = 'quarter-divider';
-            divider.innerText = quarters[project.week];
-            list.appendChild(divider);
+            quarterIndex++;
+            const quarterHeader = document.createElement('div');
+            quarterHeader.className = 'quarter-header';
+            quarterHeader.dataset.quarter = quarterIndex;
+            quarterHeader.innerText = quarters[project.week];
+            list.appendChild(quarterHeader);
+
+            currentQuarterContent = document.createElement('div');
+            currentQuarterContent.className = 'quarter-content collapsed grid';
+            currentQuarterContent.id = `quarter-${quarterIndex}`;
+            list.appendChild(currentQuarterContent);
+
+            const qIdx = quarterIndex;
+            quarterHeader.onclick = () => toggleQuarter(qIdx);
         }
 
         const card = document.createElement('div');
@@ -52,8 +66,47 @@ function renderProjects(projects) {
         };
 
         card.onclick = () => openProjectDetails(project);
-        list.appendChild(card);
+        if (currentQuarterContent) currentQuarterContent.appendChild(card);
     });
+
+    expandCurrentQuarter();
+}
+
+function toggleQuarter(index, forceExpand = false) {
+    const content = document.getElementById(`quarter-${index}`);
+    const header = document.querySelector(`.quarter-header[data-quarter="${index}"]`);
+    if (!content || !header) return;
+
+    const isCollapsed = content.classList.contains('collapsed');
+    const shouldExpand = forceExpand || isCollapsed;
+
+    if (shouldExpand) {
+        content.classList.remove('collapsed');
+        header.classList.add('expanded');
+    } else {
+        content.classList.add('collapsed');
+        header.classList.remove('expanded');
+    }
+}
+
+function expandCurrentQuarter() {
+    const now = new Date();
+    const year = now.getFullYear();
+    const jan1 = new Date(year, 0, 1);
+    const dayOfWeek = jan1.getDay();
+    const daysToSubtract = (dayOfWeek + 6) % 7;
+    const week1Start = new Date(jan1);
+    week1Start.setDate(jan1.getDate() - daysToSubtract);
+
+    const diff = now - week1Start;
+    const weekNum = Math.floor(diff / (7 * 24 * 60 * 60 * 1000)) + 1;
+
+    let quarter = 1;
+    if (weekNum >= 40) quarter = 4;
+    else if (weekNum >= 27) quarter = 3;
+    else if (weekNum >= 14) quarter = 2;
+
+    toggleQuarter(quarter, true);
 }
 
 async function toggleStatus(project) {
