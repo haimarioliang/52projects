@@ -13,7 +13,7 @@ simple 52 projects tracking app
 
 ## Key Features
 - **Project Dashboard:** A clean list view displaying all 52 weeks.
-- **Quarterly Organization:** Weeks are visually grouped into four quarters (Q1-Q4) for better long-term tracking.
+- **Quarterly Organization:** Weeks are visually grouped into four collapsible quarters (Q1-Q4) for better long-term tracking and focus.
 - **Automated Date Ranges:** Each week automatically displays its corresponding date range, aligned to Monday-to-Monday cycles.
 - **Status Tracking:** Simple toggles or indicators for each project's status (e.g., "Not Started", "In Progress", "Done").
 - **Expanded Statuses:** Support for distinct statuses: "Not Started", "In Progress", "Done", "Failed", and "Skipped".

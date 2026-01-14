@@ -4,5 +4,5 @@ This file tracks all major tracks for the project. Each track has its own detail
 
 ---
 
-## [~] Track: Collapsible Quarterly Drawers
+## [x] Track: Collapsible Quarterly Drawers
 *Link: [./conductor/tracks/quarter_drawers_20260114/](./conductor/tracks/quarter_drawers_20260114/)*
