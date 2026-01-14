@@ -1,10 +1,10 @@
 # Implementation Plan - Restore Global Notes & Hamburger Menu
 
-## Phase 1: Data Persistence & API
+## Phase 1: Data Persistence & API [checkpoint: d83add7]
 - [x] Task: Create `global_notes` table in `db.js` with initial row seeding.
 - [x] Task: Implement GET and PATCH endpoints for `/api/global-notes` in `app.js`.
-- [~] Task: Write failing tests verifying the new API endpoints.
-- [ ] Task: Conductor - User Manual Verification 'Data Persistence & API' (Protocol in workflow.md)
+- [x] Task: Write failing tests verifying the new API endpoints.
+- [x] Task: Conductor - User Manual Verification 'Data Persistence & API' (Protocol in workflow.md)
 
 ## Phase 2: Hamburger Navigation
 - [ ] Task: Refactor header in `index.html` and `stats.html` to include the hamburger toggle and hidden nav overlay.
