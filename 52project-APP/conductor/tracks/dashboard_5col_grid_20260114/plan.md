@@ -6,7 +6,7 @@
 - [x] Task: Adjust the `#dashboard` and `#project-list` max-widths if necessary to accommodate the wider 5-column layout without clipping.
 - [x] Task: Conductor - User Manual Verification 'Desktop Grid Verification' (Protocol in workflow.md)
 
-## Phase 2: Responsiveness & Polish
+## Phase 2: Responsiveness & Polish [checkpoint: 6c5dd89]
 - [x] Task: Write failing test to verify specific breakpoints for the new dashboard grid (e.g., 3 columns at tablet size).
-- [~] Task: Update `public/style.css` media queries to ensure the grid reduces to 3 columns and 1 column at appropriate screen widths.
-- [ ] Task: Conductor - User Manual Verification 'Responsive Grid Verification' (Protocol in workflow.md)
+- [x] Task: Update `public/style.css` media queries to ensure the grid reduces to 3 columns and 1 column at appropriate screen widths.
+- [x] Task: Conductor - User Manual Verification 'Responsive Grid Verification' (Protocol in workflow.md)
