@@ -8,9 +8,9 @@ test('Dashboard Grid Refinement', async (t) => {
   const styleCssPath = path.join(publicDir, 'style.css');
   const css = fs.readFileSync(styleCssPath, 'utf8');
 
-  await t.test('quarter-content enforces 4-column grid on desktop', () => {
-    // We expect .quarter-content { grid-template-columns: repeat(4, 1fr) }
-    assert.match(css, /\.quarter-content\s*\{[^}]*grid-template-columns:\s*repeat\(4,\s*1fr\)/, 'should have 4 columns for quarterly content');
+  await t.test('quarter-content enforces 5-column grid on desktop', () => {
+    // We expect .quarter-content { grid-template-columns: repeat(5, 1fr) }
+    assert.match(css, /\.quarter-content\s*\{[^}]*grid-template-columns:\s*repeat\(5,\s*1fr\)/, 'should have 5 columns for quarterly content');
   });
 
   await t.test('quarter-content uses 2 columns on mobile', () => {
