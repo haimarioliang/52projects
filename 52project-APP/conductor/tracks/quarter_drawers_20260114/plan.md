@@ -1,9 +1,10 @@
 # Implementation Plan - Collapsible Quarterly Drawers
 
-## Phase 1: Logic & Structure
+## Phase 1: Logic & Structure [checkpoint: 70540ff]
 - [x] Task: Write failing test to verify that `renderProjects` creates four quarterly containers.
-- [~] Task: Refactor `renderProjects` in `public/script.js` to group projects by quarter and wrap them in collapsible `div` containers with toggleable headers.
-- [ ] Task: Implement `toggleQuarter` logic in `public/script.js` to handle the expand/collapse interaction.
+- [x] Task: Refactor `renderProjects` in `public/script.js` to group projects by quarter and wrap them in collapsible `div` containers with toggleable headers.
+- [x] Task: Implement `toggleQuarter` logic in `public/script.js` to handle the expand/collapse interaction.
+- [x] Task: Conductor - User Manual Verification 'Logic & Structure' (Protocol in workflow.md)
 
 ## Phase 2: UI Polishing & Initial State
 - [ ] Task: Update `public/style.css` to add smooth transitions for the quarterly drawers (e.g., `max-height` or `transform` transitions).
