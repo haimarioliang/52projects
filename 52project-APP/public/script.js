@@ -180,10 +180,29 @@ function closeModal() {
     currentProject = null;
 }
 
+function toggleMenu() {
+    const menuToggle = document.getElementById('menu-toggle');
+    const navOverlay = document.getElementById('nav-overlay');
+    if (!menuToggle || !navOverlay) return;
+
+    menuToggle.classList.toggle('open');
+    navOverlay.classList.toggle('hidden');
+    
+    if (menuToggle.classList.contains('open')) {
+        document.body.style.overflow = 'hidden';
+    } else {
+        document.body.style.overflow = '';
+    }
+}
+
 // Initial fetch
 document.addEventListener('DOMContentLoaded', () => {
     const isStatsPage = !!document.getElementById('stats-grid');
     
+    // Hamburger Menu Logic
+    const menuToggle = document.getElementById('menu-toggle');
+    if (menuToggle) menuToggle.onclick = toggleMenu;
+
     if (isStatsPage) {
         fetchStats();
     } else {
@@ -197,8 +216,12 @@ document.addEventListener('DOMContentLoaded', () => {
         
         window.onclick = (event) => {
             const modal = document.getElementById('modal');
+            const navOverlay = document.getElementById('nav-overlay');
             if (event.target === modal) {
                 closeModal();
+            }
+            if (event.target === navOverlay) {
+                toggleMenu();
             }
         };
     }

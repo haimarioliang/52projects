@@ -7,9 +7,9 @@
 - [x] Task: Conductor - User Manual Verification 'Data Persistence & API' (Protocol in workflow.md)
 
 ## Phase 2: Hamburger Navigation
-- [ ] Task: Refactor header in `index.html` and `stats.html` to include the hamburger toggle and hidden nav overlay.
-- [ ] Task: Update `style.css` to style the minimalist header, hamburger icon, and navigation overlay.
-- [ ] Task: Implement JavaScript logic in `script.js` to handle the hamburger menu toggle.
+- [x] Task: Refactor header in `index.html` and `stats.html` to include the hamburger toggle and hidden nav overlay.
+- [x] Task: Update `style.css` to style the minimalist header, hamburger icon, and navigation overlay.
+- [~] Task: Implement JavaScript logic in `script.js` to handle the hamburger menu toggle.
 - [ ] Task: Conductor - User Manual Verification 'Hamburger Navigation' (Protocol in workflow.md)
 
 ## Phase 3: Global Notes UI & Interaction

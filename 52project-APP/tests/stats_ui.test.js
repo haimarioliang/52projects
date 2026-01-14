@@ -16,7 +16,7 @@ test('Stats Page UI', async (t) => {
     assert.ok(html.includes('id="stats-grid"'), 'should have stats-grid container');
     assert.ok(!html.includes('id="progress-bar"'), 'should NOT have progress-bar');
     assert.ok(html.includes('id="progress-text"'), 'should have progress-text');
-    assert.ok(html.includes('nav-links'), 'should have navigation links');
+    assert.ok(html.includes('id="nav-overlay"'), 'should have navigation overlay');
   });
 
   await t.test('script.js has fetchStats function', () => {
