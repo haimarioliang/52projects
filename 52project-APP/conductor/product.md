@@ -19,7 +19,7 @@ simple 52 projects tracking app
 - **Expanded Statuses:** Support for distinct statuses: "Not Started", "In Progress", "Done", "Failed", and "Skipped".
 - **Flexible Tagging:** Ability to add multiple custom tags to each project for categorization.
 - **Project Details:** Capability to click into a specific week/project to input and edit the project's title and description.
-- **Stats Page:** A dedicated view featuring a 52-dot grid to visualize yearly progress at a glance.
+- **Stats Page:** A dedicated view featuring a 52-dot grid, organized into quarterly rows, to visualize yearly progress at a glance.
 
 ## Platform
 - **Web Application:** Accessible via a web browser for easy access.
