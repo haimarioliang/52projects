@@ -235,6 +235,7 @@ h2 {
     overflow: hidden;
     max-height: 5000px; /* Large enough to fit cards */
     opacity: 1;
+    margin-top: 20px;
 }
 
 .quarter-content.collapsed {
