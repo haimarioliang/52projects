@@ -9,7 +9,7 @@
 - **Node.js (Express):** To serve the application and provide API endpoints for data management.
 
 ## Database
-- **SQLite:** For structured data persistence of projects and their statuses.
+- **SQLite:** For structured data persistence of projects, statuses, and global notes.
 
 ## Development Tools
 - **Gemini CLI:** For project management and assistance.

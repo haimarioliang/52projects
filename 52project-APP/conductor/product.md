@@ -20,6 +20,7 @@ simple 52 projects tracking app
 - **Flexible Tagging:** Ability to add multiple custom tags to each project for categorization.
 - **Project Details:** Capability to click into a specific week/project to input and edit the project's title and description.
 - **Stats Page:** A dedicated view featuring a 52-dot grid, organized into quarterly rows, to visualize yearly progress at a glance.
+- **Global Notes:** A "Dumb Ideas" scratchpad accessible via the hamburger menu for brainstorming ideas not yet assigned to a specific project.
 
 ## Platform
 - **Web Application:** Accessible via a web browser for easy access.

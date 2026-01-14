@@ -4,5 +4,5 @@ This file tracks all major tracks for the project. Each track has its own detail
 
 ---
 
-## [~] Track: Restore Global Notes & Hamburger Menu
+## [x] Track: Restore Global Notes & Hamburger Menu
 *Link: [./conductor/tracks/restore_global_notes_20260114/](./conductor/tracks/restore_global_notes_20260114/)*
