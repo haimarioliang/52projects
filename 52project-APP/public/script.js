@@ -84,10 +84,13 @@ function updateOverallProgress(projects) {
     const progressBar = document.getElementById('progress-bar');
     const progressText = document.getElementById('progress-text');
     
-    if (progressBar && progressText) {
+    if (progressText) {
+        progressText.innerText = `${completedCount}/52 completed`;
+    }
+
+    if (progressBar) {
         const percentage = (completedCount / 52) * 100;
         progressBar.style.width = `${percentage}%`;
-        progressText.innerText = `${completedCount}/52 completed`;
     }
 }
 

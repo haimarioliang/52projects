@@ -8,7 +8,7 @@
 - [x] Task: Conductor - User Manual Verification 'Header Refinement & Layout Setup' (Protocol in workflow.md)
 
 ## Phase 2: Functional Polish & Mobile Adjustment
-- [ ] Task: Write failing test to ensure `updateOverallProgress` correctly updates only the text on the stats page.
-- [ ] Task: Refactor `public/script.js` to gracefully handle the absence of the progress bar element on the stats page.
-- [ ] Task: Update `public/style.css` media queries to ensure the quarterly grouping remains intuitive on smaller screens.
+- [x] Task: Write failing test to ensure `updateOverallProgress` correctly updates only the text on the stats page.
+- [x] Task: Refactor `public/script.js` to gracefully handle the absence of the progress bar element on the stats page.
+- [x] Task: Update `public/style.css` media queries to ensure the quarterly grouping remains intuitive on smaller screens.
 - [ ] Task: Conductor - User Manual Verification 'Functional Polish & Mobile Adjustment' (Protocol in workflow.md)
