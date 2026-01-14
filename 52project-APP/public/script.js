@@ -195,6 +195,86 @@ function toggleMenu() {
     }
 }
 
+let lastSavedContent = '';
+let isSaving = false;
+
+async function fetchGlobalNotes() {
+    try {
+        const response = await fetch('/api/global-notes');
+        const data = await response.json();
+        const textarea = document.getElementById('global-notes-area');
+        if (textarea) {
+            textarea.value = data.content || '';
+            lastSavedContent = textarea.value;
+        }
+    } catch (error) {
+        console.error('Error fetching global notes:', error);
+    }
+}
+
+let saveTimeout = null;
+async function saveGlobalNotes() {
+    const textarea = document.getElementById('global-notes-area');
+    if (!textarea || isSaving) return;
+    const content = textarea.value;
+    
+    // Prevent redundant saves if content hasn't changed
+    if (content === lastSavedContent) return;
+
+    isSaving = true;
+    const saveStatus = document.getElementById('save-status');
+    if (saveStatus) saveStatus.innerText = 'Saving...';
+
+    try {
+        const response = await fetch('/api/global-notes', {
+            method: 'PATCH',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ content })
+        });
+        
+        if (response.ok) {
+            lastSavedContent = content;
+            if (saveStatus) {
+                saveStatus.innerText = 'Saved.';
+                setTimeout(() => {
+                    if (saveStatus.innerText === 'Saved.') saveStatus.innerText = '';
+                }, 2000);
+            }
+        }
+    } catch (error) {
+        console.error('Error saving global notes:', error);
+        if (saveStatus) saveStatus.innerText = 'Error saving.';
+    } finally {
+        isSaving = false;
+        // Check if content changed while we were saving
+        if (textarea.value !== lastSavedContent) {
+            handleGlobalNotesInput();
+        }
+    }
+}
+
+function handleGlobalNotesInput() {
+    clearTimeout(saveTimeout);
+    saveTimeout = setTimeout(saveGlobalNotes, 1000);
+}
+
+function openGlobalNotes() {
+    const modal = document.getElementById('global-notes-modal');
+    if (modal) {
+        fetchGlobalNotes();
+        modal.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+    }
+}
+
+function closeGlobalNotes() {
+    const modal = document.getElementById('global-notes-modal');
+    if (modal) {
+        modal.classList.add('hidden');
+        document.body.style.overflow = '';
+    }
+}
+
 // Initial fetch
 document.addEventListener('DOMContentLoaded', () => {
     const isStatsPage = !!document.getElementById('stats-grid');
@@ -202,6 +282,20 @@ document.addEventListener('DOMContentLoaded', () => {
     // Hamburger Menu Logic
     const menuToggle = document.getElementById('menu-toggle');
     if (menuToggle) menuToggle.onclick = toggleMenu;
+
+    // Global Notes Logic
+    const openNotesBtn = document.getElementById('open-dumb-ideas');
+    if (openNotesBtn) openNotesBtn.onclick = (e) => {
+        e.preventDefault();
+        toggleMenu(); // Close menu
+        openGlobalNotes();
+    };
+
+    const closeNotesBtn = document.getElementById('close-global-notes');
+    if (closeNotesBtn) closeNotesBtn.onclick = closeGlobalNotes;
+
+    const notesArea = document.getElementById('global-notes-area');
+    if (notesArea) notesArea.oninput = handleGlobalNotesInput;
 
     if (isStatsPage) {
         fetchStats();
@@ -217,11 +311,15 @@ document.addEventListener('DOMContentLoaded', () => {
         window.onclick = (event) => {
             const modal = document.getElementById('modal');
             const navOverlay = document.getElementById('nav-overlay');
+            const globalNotesModal = document.getElementById('global-notes-modal');
             if (event.target === modal) {
                 closeModal();
             }
             if (event.target === navOverlay) {
                 toggleMenu();
+            }
+            if (event.target === globalNotesModal) {
+                closeGlobalNotes();
             }
         };
     }

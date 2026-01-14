@@ -6,7 +6,6 @@ const app = express();
 
 app.use(cors());
 app.use(express.json());
-app.use(express.static('public'));
 
 app.get('/api/global-notes', (req, res) => {
   db.get('SELECT content FROM global_notes WHERE id = 1', (err, row) => {
@@ -27,6 +26,8 @@ app.patch('/api/global-notes', (req, res) => {
     res.json({ content });
   });
 });
+
+app.use(express.static('public'));
 
 app.get('/api/projects', (req, res) => {
   db.all('SELECT * FROM projects ORDER BY week ASC', (err, rows) => {

@@ -13,8 +13,8 @@
 - [x] Task: Conductor - User Manual Verification 'Hamburger Navigation' (Protocol in workflow.md)
 
 ## Phase 3: Global Notes UI & Interaction
-- [ ] Task: Add the "Dumb Ideas" modal structure to `index.html` and `stats.html`.
-- [ ] Task: Update `style.css` to style the modal scratchpad (large textarea, minimalist borders).
-- [ ] Task: Implement `fetchGlobalNotes` and `saveGlobalNotes` (with auto-save debounce) logic in `script.js`.
-- [ ] Task: Link the "Dumb Ideas" menu item to open the modal.
-- [ ] Task: Conductor - User Manual Verification 'Global Notes UI & Interaction' (Protocol in workflow.md)
+- [x] Task: Add the "Dumb Ideas" modal structure to `index.html` and `stats.html`.
+- [x] Task: Update `style.css` to style the modal scratchpad (large textarea, minimalist borders).
+- [x] Task: Implement `fetchGlobalNotes` and `saveGlobalNotes` (with auto-save debounce) logic in `script.js`.
+- [x] Task: Link the "Dumb Ideas" menu item to open the modal.
+- [x] Task: Conductor - User Manual Verification 'Global Notes UI & Interaction' (Protocol in workflow.md)
